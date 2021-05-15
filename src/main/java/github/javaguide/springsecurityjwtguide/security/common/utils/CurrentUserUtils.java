@@ -1,4 +1,4 @@
-package github.javaguide.springsecurityjwtguide.security.utils;
+package github.javaguide.springsecurityjwtguide.security.common.utils;
 
 import github.javaguide.springsecurityjwtguide.system.entity.User;
 import github.javaguide.springsecurityjwtguide.system.service.UserService;
@@ -22,7 +22,7 @@ public class CurrentUserUtils {
         return userService.find(getCurrentUserName());
     }
 
-    private static String getCurrentUserName() {
+    private  String getCurrentUserName() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.getPrincipal() != null) {
             return (String) authentication.getPrincipal();
